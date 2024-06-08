@@ -4,25 +4,25 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- main
+  - main
 
 pool:
-  vmImage: macOS-latest
+  vmImage: windows-latest
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '14.x'
-    checkLatest: true
-  displayName: 'Install Node.js'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "18.x"
+      checkLatest: true
+    displayName: "Install Node.js"
 
-- script: |
-    npm install
-    npx wdio wdio.conf.js
-  displayName: 'npm install and build'
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '*.xml'
-    mergeTestResults: true
-    failTaskOnFailedTests: true
+  - script: |
+      npm install
+      npx wdio wdio.conf.js
+    displayName: "npm install and build"
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: "JUnit"
+      testResultsFiles: "*.xml"
+      mergeTestResults: true
+      failTaskOnFailedTests: true
