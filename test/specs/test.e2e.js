@@ -45,10 +45,27 @@ describe('End to End Login, Add Product and Place an order flow', () => {
         await CheckoutPage.UserInfromation(firstName, lastname,postCode)
         await CheckoutPage.btnFinish.click()
         await expect(CheckoutPage.btnBackHome).toHaveText('Back Home')
-        await browser.pause(1000)
-        
+        await browser.pause(1000)        
     })
 
+    it('should be able to place an order using performance glitch user', async () => {
+        await LoginPage.open()
+        await LoginPage.login(process.env.PERFORMANCEGLITCHUSER, process.env.PASSWORD)
+          await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')    
+        await expect(InventoryPage.LinkSauceLabsBackpack).toHaveText('Sauce Labs Backpack')
+        await InventoryPage.btnSauceLabsBackpackAddtoCart.click()
+        await InventoryPage.btnSauceLabsFleeceJacketAddtoCart.click()        
+        await CartPage.goToShoppingCart()
+        await CartPage.proceedToCheckout()
+  
+        const firstName = faker.person.firstName()
+        const lastname = faker.person.lastName()
+        const postCode = faker.address.zipCode('####') // '6925'
+        await CheckoutPage.UserInfromation(firstName, lastname,postCode)
+        await CheckoutPage.btnFinish.click()
+        await expect(CheckoutPage.btnBackHome).toHaveText('Back Home')
+        await browser.pause(1000)        
+    })
    
 })
 
