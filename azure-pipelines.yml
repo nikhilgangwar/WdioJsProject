@@ -7,7 +7,7 @@ trigger:
   - main
 
 pool:
-  vmImage: windows-latest
+  vmImage: ubuntu-latest
 
 steps:
   - task: NodeTool@0
@@ -16,13 +16,28 @@ steps:
       checkLatest: true
     displayName: "Install Node.js"
 
-  - script: |
-      npm install
-      npm run wdio
-    displayName: "npm install and build"
+  - script: npm ci
+    displayName: "npm ci"
+  - script: npm init wdio@latest . -- --yes
+    displayName: "Install WDIO"
+  - script: npm run wdio
+    displayName: "Run wdio tests"
+    env:
+      CI: "true"
+
   - task: PublishTestResults@2
+    displayName: "Publish test results"
     inputs:
+      searchFolder: "./"
       testResultsFormat: "JUnit"
       testResultsFiles: "*.xml"
       mergeTestResults: true
       failTaskOnFailedTests: true
+      testRunTitle: "WebdriverIO test Results"
+    condition: succeededOrFailed()
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: "$(Pipeline.Workspace)"
+      artifact: WDIO-report
+      publishLocation: "pipeline"
+    condition: succeededOrFailed()
