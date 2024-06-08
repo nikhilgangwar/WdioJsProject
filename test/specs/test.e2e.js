@@ -7,6 +7,7 @@ import LoginPage from '../pageobjects/login.page.js'
 describe('My Login application', () => {
     it('should be able to login using Standard User', async () => {
         await LoginPage.open()
+        console.log('username env - '+process.env.STANDARDUSER);
         await LoginPage.login(process.env.STANDARDUSER, process.env.PASSWORD) 
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')                   
     })
