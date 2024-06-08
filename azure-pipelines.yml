@@ -25,3 +25,13 @@ steps:
     inputs:
       testResultsFormat: 'JUnit'
       testResultsFiles: '*.xml'
+      mergeTestResults: true
+      failTaskOnFailedTests: true
+      testRunTitle: "My End-To-End Tests"
+    condition: succeededOrFailed()
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: "$(Pipeline.Workspace)"
+      artifact: Testresults
+      publishLocation: "pipeline"
+    condition: succeededOrFailed()
