@@ -18,7 +18,7 @@ steps:
 
   - script: |
       npm install
-      npx wdio wdio.conf.js
+      npm run wdio
     displayName: "npm install and build"
   - task: PublishTestResults@2
     inputs:
