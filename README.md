@@ -1,1 +1,1 @@
-This is Webdriver IO Autiomation Demo project.
+This is Webdriver IO Automation Demo project.
