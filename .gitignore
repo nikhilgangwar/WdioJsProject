@@ -1,6 +1,4 @@
 node_modules
 .env
 Testresults.xml
-test/pageobjects/tempcode/cart.page.js
-test/pageobjects/tempcode/checkout.page.js
-test/pageobjects/tempcode/inventory.page.js
+

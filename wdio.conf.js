@@ -54,7 +54,7 @@ export const config = {
         maxInstances: 1,
         browserName: 'chrome',   // or 'chromium'
     'goog:chromeOptions': {
-        args: ['headless', 'disable-gpu']
+        //args: ['headless', 'disable-gpu']
     } // or "firefox", "microsoftedge", "safari"
         
     }
