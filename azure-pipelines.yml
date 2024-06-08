@@ -7,7 +7,7 @@ trigger:
   - main
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'macOS-latest'
 
 steps:
   - task: NodeTool@0
@@ -18,7 +18,7 @@ steps:
   
   - script: |
       npm install
-      npx wdio wdio.conf.js
+      npm run wdio
     displayName: 'npm install and build'
 
   - task: PublishTestResults@2
