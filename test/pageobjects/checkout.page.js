@@ -34,7 +34,10 @@ class CheckoutPage extends Page {
 
     /**
      * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
+     * e.g. to enter user information on checkout
+     * @param firstname
+     * @param lastname
+     * @param zippostalcode
      */
     async UserInfromation (firstname, lastname, zippostalcode) {
         await this.inputFirstname.setValue(firstname);
