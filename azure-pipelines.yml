@@ -7,7 +7,7 @@ trigger:
   - main
 
 pool:
-  vmImage: 'macOS-latest'
+  vmImage: "windows-latest"
 
 steps:
   - task: NodeTool@0
@@ -15,16 +15,16 @@ steps:
       versionSpec: "20.x"
       checkLatest: true
     displayName: "Install Node.js"
-  
+
   - script: |
       npm install
       npm run wdio
-    displayName: 'npm install and build'
+    displayName: "npm install and build"
 
   - task: PublishTestResults@2
     inputs:
-      testResultsFormat: 'JUnit'
-      testResultsFiles: '*.xml'
+      testResultsFormat: "JUnit"
+      testResultsFiles: "*.xml"
       mergeTestResults: true
       failTaskOnFailedTests: true
       testRunTitle: "My End-To-End Tests"
