@@ -21,7 +21,6 @@ Before running the tests, ensure you have the following installed:
 
 - Node.js
 - WebDriverIO
-- Selenium Server (if applicable)
 
 ### Installation
 
