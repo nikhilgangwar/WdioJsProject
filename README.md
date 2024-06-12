@@ -68,7 +68,7 @@ For the CI pipeline, credentials are stored as environment variables. These vari
 
 Execute the following command to run the tests:
 
-npm test
+npm run wdio
 
 ### Writing Tests
 
