@@ -23,7 +23,7 @@ describe('My Login application', () => {
     })
     it('should be able to login using performance glitch User', async () => {
      
-        // Open the login page
+        // Open the login page..
         await LoginPage.open()
      
         //Login using the performance glitch user
