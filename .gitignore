@@ -2,3 +2,4 @@ node_modules
 .env
 Testresults.xml
 
+test-results/.last-run.json
