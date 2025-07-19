@@ -3,10 +3,11 @@
   "type": "module",
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
-    "@wdio/cli": "^9.15.0",
-    "@wdio/local-runner": "^9.15.0",
-    "@wdio/mocha-framework": "^9.15.0",
-    "@wdio/spec-reporter": "^8.38.2",
+    "@wdio/cli": "^9.17.1",
+    "@wdio/globals": "^9.17.0",
+    "@wdio/local-runner": "^9.17.0",
+    "@wdio/mocha-framework": "^9.17.0",
+    "@wdio/spec-reporter": "^9.17.0",
     "dotenv": "^16.4.5",
     "wdio-safaridriver-service": "^1.0.0"
   },
@@ -15,6 +16,6 @@
   },
   "dependencies": {
     "@moroo/wdio-slack-reporter": "^8.1.0",
-    "@wdio/junit-reporter": "^8.38.2"
+    "@wdio/junit-reporter": "^9.17.0"
   }
 }

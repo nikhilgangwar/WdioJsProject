@@ -44,6 +44,7 @@ export const config = {
     // from the same test should run tests.
     //
     maxInstances: 1,
+    injectGlobals: false, // disable global browser object injection
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -57,13 +58,15 @@ export const config = {
         //args: ['headless', 'disable-gpu']
     } // or "firefox", "microsoftedge", "safari"
         
-    },{
+    }
+    ,{
          browserName: 'firefox'
-    },
+    }
+    /*,
     {
          browserName: 'microsoftedge'
     }
-    
+    */
 ],
 
     //

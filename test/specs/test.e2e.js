@@ -1,7 +1,6 @@
 import 'dotenv/config'
 import { faker } from '@faker-js/faker';
-import { browser } from '@wdio/globals'
-import { expect } from '@wdio/globals'
+import { browser, expect } from '@wdio/globals'
 import LoginPage from '../pageobjects/login.page.js'
 import InventoryPage from '../pageobjects/inventory.page.js'
 import CartPage from '../pageobjects/cart.page.js'
