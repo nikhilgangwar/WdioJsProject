@@ -78,6 +78,23 @@ npm run wdio
 
 3. Write test cases using WebDriverIO API, utilizing the created page objects.
 
+### Azure Pipeline Analytics
+
+<img width="2234" height="865" alt="image" src="https://github.com/user-attachments/assets/a468d047-fd9b-4289-97d4-360387b51267" />
+
+##  Pipeline failure report
+
+<img width="2358" height="790" alt="image" src="https://github.com/user-attachments/assets/839e6e56-7655-48f3-8144-66eb37773704" />
+
+## Test failure report
+
+<img width="2274" height="1180" alt="image" src="https://github.com/user-attachments/assets/57e44666-c499-4a06-be22-042cbeac80d7" />
+
+## Pipeline duration report
+
+<img width="2426" height="1184" alt="image" src="https://github.com/user-attachments/assets/38fc93a7-478f-490d-b505-42d0ce8128b0" />
+
+
 ## Contributors
 
 - [Nikhil Gangwar]
