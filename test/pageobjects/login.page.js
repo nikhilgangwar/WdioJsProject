@@ -8,14 +8,18 @@ class LoginPage extends Page {
     /**
      * define selectors using getter methods
      */
+    
+    //Username input field
     get inputUsername () {
         return $('#user-name');
     }
 
+    //Password input field
     get inputPassword () {
         return $('#password');
     }
 
+    //Login button
     get btnSubmit () {
         return $('#login-button');
     }
