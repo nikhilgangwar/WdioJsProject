@@ -2,38 +2,34 @@
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
+---
 trigger:
   - main
-
 pool:
-  vmImage: "macOS-15"
+  vmImage: macOS-15
 env:
   TZ: Australia/Melbourne
-
 steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: "20.x"
+      versionSpec: 20.x
       checkLatest: true
-    displayName: "Install Node.js"
-
+    displayName: Install Node.js
   - script: |
       npm install
       npm run wdio
-    displayName: "npm install and build"
-
+    displayName: npm install and build
   - task: PublishTestResults@2
     inputs:
-      testResultsFormat: "JUnit"
+      testResultsFormat: JUnit
       testResultsFiles: "*.xml"
       mergeTestResults: true
       failTaskOnFailedTests: true
-      testRunTitle: "My End-To-End Tests"
+      testRunTitle: My End-To-End Tests
     condition: succeededOrFailed()
   - task: PublishPipelineArtifact@1
     inputs:
-      targetPath: "$(Pipeline.Workspace)"
+      targetPath: $(Pipeline.Workspace)
       artifact: Testresults
-      publishLocation: "pipeline"
+      publishLocation: pipeline
     condition: succeededOrFailed()
