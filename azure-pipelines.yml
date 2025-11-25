@@ -7,8 +7,6 @@ trigger:
   - main
 pool:
   vmImage: macOS-15
-env:
-  TZ: Australia/Melbourne
 steps:
   - task: NodeTool@0
     inputs:
